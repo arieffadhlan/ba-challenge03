@@ -2,6 +2,10 @@
     font-family: 'Helvetica', sans-serif;
 }
 
+ul {
+    list-style: none;
+}
+
 /* Custom CSS Class */
 @media screen and (min-width: 992px) {
     .global-container {
@@ -189,13 +193,12 @@
 }
 
 #input-available-at::-webkit-calendar-picker-indicator {
-    display: none;
-    appearance: none;
-    -webkit-appearance: none;
+    background: url("../icons/form-input/calendar.svg") no-repeat right;
+    background-position-x: 1px;
+    background-position-y: 1.5px;
 }
 
 #input-driver-type-container img,
-#input-available-at-container img,
 #input-pick-up-time-container img,
 #input-capacity-container img {
     top: 11.5px;

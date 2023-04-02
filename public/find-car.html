@@ -63,7 +63,7 @@
         </section>
         <section class="car-search global-container container position-relative d-flex justify-content-center align-items-center">
             <div class="car-search__container rounded-3 bg-white">
-                <form onsubmit="event.preventDefault();" class="car-search__form">
+                <form onsubmit="event.preventDefault();" id="car-search-form" class="car-search__form">
                     <div class="car-search__form-field position-relative d-flex flex-column gap-1">
                         <label for="input-driver-type" class="car-search__form-label">
                             Tipe Driver
@@ -85,10 +85,7 @@
                         <label for="input-available-at" class="car-search__form-label">
                             Tanggal
                         </label>
-                        <div id="input-available-at-container" class="position-relative">
-                            <input type="date" name="input-available-at" id="input-available-at" class="car-search__form-input">
-                            <img src="icons/form-input/calendar.svg" alt="available-at" class="car-search__form-input-icon position-absolute">
-                        </div>
+                        <input type="date" name="input-available-at" id="input-available-at" class="car-search__form-input">
                     </div>
                     <div class="car-search__form-field position-relative d-flex flex-column gap-1">
                         <label for="pick-up-time" class="car-search__form-label">
@@ -130,7 +127,7 @@
                             <img src="icons/form-input/users.svg" alt="pick-up-time" class="car-search__form-input-icon position-absolute">
                         </div>
                     </div>
-                    <button id="search-btn" class="btn-cta align-self-end">
+                    <button id="search-btn" class="btn-cta align-self-end text-nowrap">
                         Cari Mobil
                     </button>
                 </form>
