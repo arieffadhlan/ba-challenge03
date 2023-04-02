@@ -1,5 +1,6 @@
 class App {
   constructor() {
+    this.carForm = document.querySelector(".car-search__form");
     this.driverType = document.getElementById("input-driver-type");
     this.AvailableAt = document.getElementById("input-available-at");
     this.PickUpTime = document.getElementById("input-pick-up-time");
@@ -14,13 +15,18 @@ class App {
   }
 
   search = async () => {
+    this.clear();
+    
+    const driverType = this.driverType.value;
     const availableAt = this.AvailableAt.value;
     const pickUpTime = this.PickUpTime.value;
     const capacity = this.Capacity.value;
     
-    this.clear();
-    if (!availableAt || !pickUpTime || !capacity) {
+    if (!driverType || !availableAt || !pickUpTime || !capacity) {
       alert("mohon isi semua");
+      this.resetForm();
+      this.init()
+      this.run();
     } else {
       const dateTime = new Date(`${availableAt} ${pickUpTime}`);
       this.filterCar(dateTime, capacity);
@@ -49,13 +55,20 @@ class App {
     }
   };
 
+  resetForm = () => {
+    this.carForm.reset();
+  }
+
   filterCar = async (dateTime, capacity) => {
     const cars = await Binar.listCars((car) => {
+      const available = car.available
       const dateFilter = car.availableAt >= dateTime;
       const capacityFilter = car.capacity >= capacity;
-      return dateFilter && capacityFilter;
+      return available && dateFilter && capacityFilter;
     });
+    
     Car.init(cars);
     this.run();
+    this.resetForm();
   }
 }

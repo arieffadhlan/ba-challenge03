@@ -2,7 +2,7 @@ class Car {
 	static list = [];
 
 	static init(cars) {
-	this.list = cars.map((i) => new this(i));
+		this.list = cars.map((i) => new this(i));
 	}
 
 	constructor({
@@ -49,7 +49,7 @@ class Car {
 							${this.manufacture}/${this.model}
 						</span>
 						<h1 class="cars-card__price mb-0 fs-6 lh-base fw-bold">
-							Rp ${this.rentPerDay} / hari
+							Rp ${this.rentPerDay.toLocaleString("id-ID")} / hari
 						</h1>
 						<p class="cars-card__description mb-0 fw-light">
 							${this.description}
@@ -69,9 +69,11 @@ class Car {
 							<span class="cars-card__year fw-light">Tahun ${this.year}</span>
 						</div>
 					</div>
-					<button class="cars-card__button btn-cta">
-						Pilih Mobil
-					</button>
+					${this.available ? 
+						'<button class="cars-card__button btn-cta">Pilih Mobil</button>'
+					: 
+						'<button class="cars-card__button btn-cta btn-cta-disabled">Tidak Tersedia</button>'
+					}
 				</div>
 			</div>
 		`;

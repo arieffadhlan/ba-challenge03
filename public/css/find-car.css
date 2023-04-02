@@ -44,10 +44,15 @@
     border: 1px solid transparent;
     border-radius: 2px;
     outline: none;
-    background-color: #5CB85F;
+    background-color: #5cb85f;
     font-size: 14px;
     line-height: 20px;
     color: #FFFFFF;
+}
+
+.btn-cta-disabled {
+    pointer-events: none;
+    background-color: rgba(92, 184, 95, 0.7);
 }
 
 #logo {
@@ -61,6 +66,15 @@
 }
 
 /* Main CSS */
+/* Backdrop filter */
+.backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 /* Navbar */
 .navbar__items {
     gap: 32px;
@@ -174,11 +188,11 @@
     color: #3C3C3C;
 }
 
-#input-available-at::-webkit-calendar-picker-indicator {
+/* #input-available-at::-webkit-calendar-picker-indicator {
     background: url(/public/icons/form-input/calendar.svg) no-repeat right;
     background-position-x: 1px;
     background-position-y: 1.5px;
-}
+} */
 
 #input-driver-type-container img,
 #input-pick-up-time-container img,

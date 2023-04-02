@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
+        <div id="filter-backdrop"></div>
         <!-- Navbar -->
         <header class="bg-grey">
             <nav class="navbar__contents navbar__container container d-flex justify-content-between align-items-center">
@@ -62,7 +63,7 @@
         </section>
         <section class="car-search global-container container position-relative d-flex justify-content-center align-items-center">
             <div class="car-search__container rounded-3 bg-white">
-                <form onsubmit="event.preventDefault()" class="car-search__form">
+                <form onsubmit="event.preventDefault();" class="car-search__form">
                     <div class="car-search__form-field position-relative d-flex flex-column gap-1">
                         <label for="input-driver-type" class="car-search__form-label">
                             Tipe Driver
@@ -123,7 +124,7 @@
                         </label>
                         <div id="input-capacity-container" class="position-relative">
                             <input type="text" name="input-capacity" id="input-capacity" class="car-search__form-input" placeholder="Jumlah Penumpang">
-                            <img src="icons/form-input/clock.svg" alt="pick-up-time" class="car-search__form-input-icon position-absolute">
+                            <img src="icons/form-input/users.svg" alt="pick-up-time" class="car-search__form-input-icon position-absolute">
                         </div>
                     </div>
                     <button id="search-btn" class="btn-cta align-self-end">
