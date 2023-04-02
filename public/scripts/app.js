@@ -1,6 +1,5 @@
 class App {
 	constructor() {
-		this.carForm = document.getElementById("car-search-form");
 		this.driverType = document.getElementById("input-driver-type");
 		this.AvailableAt = document.getElementById("input-available-at");
 		this.PickUpTime = document.getElementById("input-pick-up-time");
@@ -20,11 +19,10 @@ class App {
 		const driverType = this.driverType.value;
 		const availableAt = this.AvailableAt.value;
 		const pickUpTime = this.PickUpTime.value;
-		const capacity = this.Capacity.value;
+		const capacity = isNaN(parseInt(this.Capacity.value)) ? 0 : parseInt(this.Capacity.value);
 
-		if (!driverType || !availableAt || !pickUpTime || !capacity) {
+		if (!driverType || !availableAt || !pickUpTime) {
 			alert("Anda diharapkan mengisi semua form!");
-			this.resetForm();
 			this.init().then(this.run);
 		} else {
 			const dateTime = new Date(`${availableAt} ${pickUpTime}`);
@@ -54,17 +52,23 @@ class App {
 		}
 	};
 
-	resetForm = () => {
-		this.carForm.reset();
-	}
-
 	filterCar = async (dateTime, capacity) => {
-		const cars = await Binar.listCars((car) => {
-			const available = car.available
-			const dateFilter = car.availableAt >= dateTime;
-			const capacityFilter = car.capacity >= capacity;
-			return available && dateFilter && capacityFilter;
-		});
+		let cars;
+
+		if (capacity > 0) {
+			cars = await Binar.listCars((car) => {
+				const available = car.available;
+				const dateFilter = car.availableAt >= dateTime;
+				const capacityFilter = car.capacity >= capacity;
+				return available && dateFilter && capacityFilter;
+			});
+		} else {
+			cars = await Binar.listCars((car) => {
+				const available = car.available;
+				const dateFilter = car.availableAt >= dateTime;
+				return available && dateFilter;
+			});
+		}
 
 		if (cars.length !== 0) {
 			Car.init(cars);
@@ -76,7 +80,5 @@ class App {
 			node.innerHTML = "<h4 class='text-danger'>Mohon maaf, data mobil tidak ditemukan.</h4>";
 			this.carCards.appendChild(node);
 		}
-
-		this.resetForm();
 	}
 }
