@@ -188,13 +188,14 @@
     color: #3C3C3C;
 }
 
-/* #input-available-at::-webkit-calendar-picker-indicator {
-    background: url(/public/icons/form-input/calendar.svg) no-repeat right;
-    background-position-x: 1px;
-    background-position-y: 1.5px;
-} */
+#input-available-at::-webkit-calendar-picker-indicator {
+    display: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
 
 #input-driver-type-container img,
+#input-available-at-container img,
 #input-pick-up-time-container img,
 #input-capacity-container img {
     top: 11.5px;

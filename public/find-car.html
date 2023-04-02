@@ -85,7 +85,10 @@
                         <label for="input-available-at" class="car-search__form-label">
                             Tanggal
                         </label>
-                        <input type="date" name="input-available-at" id="input-available-at" class="car-search__form-input">
+                        <div id="input-available-at-container" class="position-relative">
+                            <input type="date" name="input-available-at" id="input-available-at" class="car-search__form-input">
+                            <img src="icons/form-input/calendar.svg" alt="available-at" class="car-search__form-input-icon position-absolute">
+                        </div>
                     </div>
                     <div class="car-search__form-field position-relative d-flex flex-column gap-1">
                         <label for="pick-up-time" class="car-search__form-label">
