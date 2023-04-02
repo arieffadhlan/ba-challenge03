@@ -1,11 +1,9 @@
 class Component {
     constructor() {
-        if (this.constructor.name === Component) {
-            throw new Error("Tidak bisa membuat instance dari Abstract Class!");
+        if (this.constructor === Component) {
+            throw new Error("Abstract class tidak bisa diinstansiasi!");
         }
     }
   
-    render() {
-        console.log("Disini tempat me-render HTML");
-    }
+    render() {}
 }

@@ -66,8 +66,17 @@ class App {
 			return available && dateFilter && capacityFilter;
 		});
 
-		Car.init(cars);
-		this.run();
+		if (cars.length !== 0) {
+			Car.init(cars);
+			this.run();
+		} else {
+			const node = document.createElement("div");
+			node.className = "d-flex justify-content-center align-items-center";
+			node.style.cssText = "grid-column: span 3 / span 3;";
+			node.innerHTML = "<h4 class='text-danger'>Mohon maaf, data mobil tidak ditemukan.</h4>";
+			this.carCards.appendChild(node);
+		}
+
 		this.resetForm();
 	}
 }
