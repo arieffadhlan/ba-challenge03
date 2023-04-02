@@ -8,7 +8,7 @@
         <meta name="keywords" content="Sewa, Rental, Mobil">
         <meta name="author" content="Muhammad Arief Fadhlan">
         <title>Sewa dan Rental Mobil</title>
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/find-car.css" rel="stylesheet">
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <!-- OWL Carousel -->
@@ -51,26 +51,26 @@
             <div class="hero__container global-container container overflow-hidden d-flex flex-column flex-xl-row justify-content-between align-items-center mt-0">
                 <div class="hero__contents col-sm-12 col-md-12 col-xl-5 d-flex flex-column justify-content-start align-items-start">
                     <h1 class="hero__headline mb-3 fw-bold lh-base text-black">
-                        Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)
+                        Sewa & Rental Mobil Terbaik di kawasan Medan
                     </h1>
                     <p class="hero__description mb-3 fw-light text-black">
                         Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.
                     </p>
-                    <button class="hero__button btn-cta d-flex justify-content-center align-items-center">
-                        Mulai Sewa Mobil
-                    </button>
                 </div>
                 <img class="hero__image img-fluid" src="images/hero.png" alt="Mobil Mercedes Benz">
             </div>
         </section>
-        <section class="car-search global-container container d-flex justify-content-center align-items-center">
-            <div class="car-search__container rounded-3">
-                <form onsubmit="event.preventDefault()" class="car-search__form d-flex justify-content-center align-items-center">
+        <section class="car-search global-container container position-relative d-flex justify-content-center align-items-center">
+            <div class="car-search__container rounded-3 bg-white">
+                <form onsubmit="event.preventDefault()" class="car-search__form">
                     <div class="car-search__form-field position-relative d-flex flex-column gap-1">
                         <label for="input-driver-type" class="car-search__form-label">
                             Tipe Driver
                         </label>
-                        <input type="text" name="input-driver-type" id="input-driver-type" placeholder="Pilih Tipe Driver" class="car-search__form-input" readonly>
+                        <div id="input-driver-type-container" class="position-relative">
+                            <input type="text" name="input-driver-type" id="input-driver-type" placeholder="Pilih Tipe Driver" class="car-search__form-input" readonly>
+                            <img src="icons/form-input/chevron-down-dropdown.svg" alt="Driver Type" class="car-search__form-input-icon position-absolute">
+                        </div>
                         <div id="driver-type-options" class="car-search__form-options position-absolute d-none flex-column">
                             <div data-attr="Dengan Sopir" class="driver-type-option car-search__form-option">
                                 Dengan Sopir
@@ -90,7 +90,10 @@
                         <label for="pick-up-time" class="car-search__form-label">
                             Waktu Jemput/Ambil
                         </label>
-                        <input type="text" name="input-pick-up-time" id="input-pick-up-time" placeholder="Pilih Waktu" class="car-search__form-input" readonly>
+                        <div id="input-pick-up-time-container" class="position-relative">
+                            <input type="text" name="input-pick-up-time" id="input-pick-up-time" placeholder="Pilih Waktu" class="car-search__form-input" readonly>
+                            <img src="icons/form-input/clock.svg" alt="pick-up-time" class="car-search__form-input-icon position-absolute">
+                        </div>
                         <div id="pick-up-time-options" class="car-search__form-options position-absolute d-none flex-column">
                             <div data-attr="08:00" class="pick-up-time-option car-search__form-option d-flex justify-content-between align-items-center">
                                 <time>08.00</time>
@@ -118,7 +121,10 @@
                         <label for="input-capacity" class="car-search__form-label">
                             Jumlah Penumpang (optional)
                         </label>
-                        <input type="text" name="input-capacity" id="input-capacity" class="car-search__form-input" placeholder="Jumlah Penumpang">
+                        <div id="input-capacity-container" class="position-relative">
+                            <input type="text" name="input-capacity" id="input-capacity" class="car-search__form-input" placeholder="Jumlah Penumpang">
+                            <img src="icons/form-input/clock.svg" alt="pick-up-time" class="car-search__form-input-icon position-absolute">
+                        </div>
                     </div>
                     <button id="search-btn" class="btn-cta align-self-end">
                         Cari Mobil
@@ -126,7 +132,9 @@
                 </form>
             </div>
         </section>
-        <div id="cars-container"></div>
+        <section class="cars-container global-container container">
+            <div id="cars-cards"></div>
+        </section>
         <footer class="footer global-container container">
             <div class="footer__container row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
@@ -214,9 +222,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- Script -->
         <script type="text/javascript" src="scripts/binar.js"></script>
-        <script type="text/javascript" src="scripts/app.example.js"></script>
-        <script type="text/javascript" src="scripts/car.example.js"></script>
-        <script type="text/javascript" src="scripts/main.example.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/car.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript" src="scripts/find-car.js"></script>
     </body>
 </html>

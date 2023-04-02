@@ -1,0 +1,359 @@
+* {
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Custom CSS Class */
+@media screen and (min-width: 992px) {
+    .global-container {
+        max-width: none !important;
+        padding: 0 136px !important;
+    }
+
+    .global-container {
+        margin-top: 100px;
+    }
+
+    .navbar__container {
+        max-width: none !important;
+        padding: 24px 136px 37px 136px !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .global-container { 
+        margin-top: 80px;
+    }
+
+    .navbar__container {
+        padding: 24px 16px 32px 16px !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .global-container:not(.hero__container) {
+        padding: 0 16px !important;
+    }
+
+    .global-container { 
+        margin-top: 60px; 
+    }
+}
+
+.btn-cta {
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    outline: none;
+    background-color: #5CB85F;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+#logo {
+    width: 100px;
+    height: 34px;
+    background: #0D28A6;
+}
+
+.bg-grey {
+    background-color: #F1F3FF;
+}
+
+/* Main CSS */
+/* Navbar */
+.navbar__items {
+    gap: 32px;
+}
+
+.offcanvas {
+    padding: 32px 24px 0 16px;
+}
+
+.offcanvas__items {
+    gap: 16px;
+}
+
+.navbar__link,
+#offcanvasLabel,
+.offcanvas__link {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* Hero */
+.hero__container {
+    gap: 24px;
+}
+
+.hero__headline {
+    font-size: 36px;
+    line-height: 54px;
+}
+
+.hero__description {
+    max-width: 460px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* Car Search */
+.car-search {
+    z-index: 2;
+    margin-top: -40px;
+    margin-bottom: 40px;
+}
+
+.car-search__container {
+    padding: 24px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.car-search__form {
+    display: grid;
+    gap: 16px;
+}
+
+.car-search__form-label {
+    font-size: 12px;
+    line-height: 18px;
+    color: #3C3C3C;
+}
+
+.car-search__form-input {
+    width: 210px;
+    height: 36px;
+    padding: 9px 12px;
+    outline: none;
+    border: 1px solid #D0D0D0;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.car-search__form-input:focus {
+    border: 1px solid #5CB85F;
+}
+
+.car-search__form-input::placeholder {
+    font-size: 12px;
+    line-height: 18px;
+    color: #8A8A8A;
+}
+
+.car-search__form-options {
+    top: 61px;
+    width: 210px;
+    z-index: 1;
+    border: 1px solid #D0D0D0;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+}
+
+.car-search__form-option {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #3C3C3C;
+}
+
+.car-search__form-option:hover {
+    font-weight: 500;
+    background-color: #C9E7CA;
+    color: #5CB85F;
+}
+
+#input-driver-type,
+#input-pick-up-time {
+    cursor: pointer;
+}
+
+#input-driver-type:focus::placeholder,
+#input-pick-up-time:focus::placeholder {
+    color: #3C3C3C;
+}
+
+#input-available-at::-webkit-calendar-picker-indicator {
+    background: url(/public/icons/form-input/calendar.svg) no-repeat right;
+    background-position-x: 1px;
+    background-position-y: 1.5px;
+}
+
+#input-driver-type-container img,
+#input-pick-up-time-container img,
+#input-capacity-container img {
+    top: 11.5px;
+    right: 5px;
+}
+
+#input-driver-type-container img,
+#input-pick-up-time-container img {
+    cursor: pointer;
+}
+
+#input-capacity-container img {
+    cursor: text;
+}
+
+.cars-container {
+    margin-top: 40px;
+}
+
+#cars-cards {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.cars-card {
+    height: 100%;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+}
+
+.cars-card__image {
+    height: 240px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.cars-card__body {
+    gap: 16px;
+    padding: 16px 24px 24px 24px;
+}
+
+.cars-card__detail {
+    gap: 16px;
+}
+
+.cars-card__model,
+.cars-card__description,
+.cars-card__capacity,
+.cars-card__transmission,
+.cars-card__year {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.cars-card__button {
+    margin-top: 8px;
+}
+
+/* footer */
+.footer {
+    margin-bottom: 60px;
+}
+
+.footer__address__list,
+.footer__navigation__list {
+    gap: 16px;
+}
+
+.footer__address__list > li,
+.footer__navigation__list > li,
+.footer__sosmed__list > li {
+    list-style: none;
+}
+
+.footer__address__list {
+    max-width: 268px;
+}
+
+.footer__address__item,
+.footer__navigation__link,
+.footer__connect,
+.footer__copyright__cr {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.footer__sosmed__list {
+    gap: 16px;
+}
+
+/* Breakpoint */
+@media screen and (min-width: 1200px) {
+    .hero__container { padding: 0 0 0 136px !important; }
+
+    .car-search__form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #cars-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media screen and (max-width: 1200px) {
+    .car-search__form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #search-btn {
+        grid-column: span 2 / span 2;
+    }
+
+    #cars-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .footer__container {
+        gap: 86px;
+    }
+    
+    .footer__container > * {
+        width: fit-content !important;
+        padding: 0 !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .footer__container > *:nth-child(1),
+    .footer__container > *:nth-child(2) {
+        margin-bottom: 60px;
+    }
+
+    #cars-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer__container > *:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    #cars-cards {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero__container {
+        padding: 0 0 0 16px !important;
+        margin-top: 37px;    
+    }
+
+    .hero__contents { 
+        padding-right: 16px;
+    }
+
+    .car-search__container {
+        width: 100%;
+    }
+
+    .car-search__form {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    
+    .car-search__form-input {
+        width: 100%;
+    }
+    
+    #search-btn {
+        grid-column: span 1 / span 1;
+    }
+}
